@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Birthday Surprise</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div id="fbg" aria-hidden="true"><video id="bgv" loop playsinline></video></div>
+<header><span class="brand">A little surprise</span><button class="ghost" id="snd" aria-pressed="true">Sound on</button></header>
+
+<section class="scene" id="intro">
+  <h1 id="hello"></h1>
+  <p>Something has been waiting for you. There is a door, and only you can find the way in.</p>
+  <button class="door" id="door1" aria-label="Open the door"></button>
+  <p>Tap the door</p>
+</section>
+
+<section class="scene" id="door">
+  <h2>The secret door</h2>
+  <p id="hint1">Type the secret word to come inside.</p>
+  <input id="word" autocomplete="off" aria-label="Secret word" placeholder="Secret word">
+  <div class="msg" id="doorMsg"></div>
+  <button class="btn" id="enter">Open the door</button>
+</section>
+
+<section class="scene" id="garden">
+  <h2>The dream garden</h2>
+  <p>Wake three flowers and find two hidden things. <span class="count" id="gc">0 of 5</span></p>
+  <div id="field"></div>
+  <button class="btn" id="gNext" hidden>Follow the path</button>
+</section>
+
+<section class="scene" id="video">
+  <div class="cine"><video id="vid" playsinline></video><div class="plate" id="plate"><h1>This one is for you</h1></div><i class="bar t"></i><i class="bar b"></i></div>
+</section>
+
+<section class="scene" id="puzzles">
+  <div id="sky"></div>
+  <h2 id="pTitle"></h2>
+  <div class="card" id="pBody"></div>
+</section>
+
+<section class="scene" id="memories">
+  <h2>Memories behind the glass</h2>
+  <p id="pCount"></p>
+  <div id="pc"></div>
+  <p>Tap the photo to turn it over.</p>
+  <button class="btn" id="pNext" hidden></button>
+</section>
+
+<section class="scene" id="letter">
+  <h2>A letter for you</h2>
+  <button class="env" id="env" aria-label="Open the letter">💌</button>
+  <div class="card paper" id="paper" hidden></div>
+  <button class="btn" id="lDone" hidden>I’ve read it</button>
+</section>
+
+<section class="scene" id="celebrate">
+  <h2 id="cTitle">One more thing</h2>
+  <button class="big" id="gift" aria-label="Open the gift">🎁</button>
+  <div id="cakeBox" hidden>
+    <div class="cake">🎂</div>
+    <div class="candles" id="candles"></div>
+    <p id="cMsg">Make a wish, then blow out the candles.</p>
+  </div>
+  <div class="row"><button class="btn" id="mic" hidden>Blow with your voice</button><button class="ghost" id="manual" hidden>Put them out by tapping</button></div>
+  <div class="wish" id="wishBox" hidden>Close your eyes.<br>Make a wish.</div>
+  <div id="scratchBox" hidden><p>Scratch the card to reveal your code</p><div class="scratch"><div class="code" id="codeShow"></div><canvas id="sc" width="300" height="110"></canvas></div></div>
+  <button class="btn" id="cNext" hidden>Continue</button>
+</section>
+
+<section class="scene" id="final">
+  <h2>The final surprise</h2>
+  <div id="lock" style="display:contents">
+    <p>Enter the reward code from the cake.</p>
+    <input id="rcode" autocomplete="off" aria-label="Reward code" placeholder="Reward code">
+    <div class="msg" id="rMsg"></div>
+    <button class="btn" id="reveal">Reveal</button>
+  </div>
+  <div class="final" id="finalMsg" hidden></div>
+</section>
+
+<footer><span id="where">Welcome</span><div id="track"><div id="bar"></div></div><button class="ghost" id="reset">Start over</button></footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
